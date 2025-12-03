@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .uno{
+            background-color: aqua;
+            border: 1;
+            width: 200px;
+            color: blue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .dos{
+            background-color: red;
+            border: 2;
+            width: 300px;
+            color: white;
+            font-family:'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <p class="uno" onclick="cambioClase()">Hola buenos dias </p>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByTagName("p")[0];
+    function cambioClase() {
+        if(ele.getAttribute("class")== "uno"){
+            ele.setAttribute("class", "dos");
+        }else{
+            ele.setAttribute("class", "uno");
+        }
+    }
+</script>

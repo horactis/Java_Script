@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+    </table>
+    <div>
+        <button onclick="anchoAltura()">Anchura y altura</button>
+        <button onclick="valorBorde()">Valor del borde</button>
+        <button onclick="alineacion()">Cambiar alineacion</button>
+    </div>
+</body>
+</html>
+<script>
+    let div = document.getElementsByTagName("div")[0];
+    let ele = document.getElementsByTagName("table")[0];
+    div.setAttribute("align", "center")
+    ele.setAttribute("width", "300xp");
+    ele.setAttribute("height", "300xp");
+    ele.setAttribute("align", "center");
+
+    function anchoAltura(){
+        alert("El ancho es "+ele.getAttribute("width")+" y la altura es "+ele.getAttribute("height"))
+        let tam=prompt("dame un acho");
+        ele.setAttribute("width", tam);
+        tam = prompt("dame una altura");
+        ele.setAttribute("height", tam);
+        alert("El ancho es "+ele.getAttribute("width")+" y la altura es "+ele.getAttribute("height"))
+    }
+
+    function valorBorde() {
+        alert(ele.getAttribute("border"));
+        let borde = prompt("Dame un tamaño para el borde");
+        ele.setAttribute("border", borde);
+    }
+
+    function alineacion(){
+        if (ele.getAttribute("align") == "center") {
+            ele.setAttribute("align", "right")
+        }else if(ele.getAttribute("align") == "right"){
+            ele.setAttribute("align", "left")
+        }else{
+            ele.setAttribute("align", "center")
+        }
+    }
+</script>

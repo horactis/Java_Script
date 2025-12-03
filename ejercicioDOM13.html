@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p style="display: none;">Ocultar</p>
+    <p>Mostrar</p>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByTagName("p");
+    ele[1].onclick = () =>{
+        ele[0].style.setProperty("display","block")
+        ele[1].style.setProperty("display","none")
+    }
+    ele[0].onclick = () =>{
+        ele[1].style.setProperty("display","block")
+        ele[0].style.setProperty("display","none")
+    }
+</script>

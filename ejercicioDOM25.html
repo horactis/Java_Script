@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        window.onload = () =>{
+            let div = document.querySelector("div");
+            let ele = document.querySelector("img");
+            let fondo = document.querySelector("img");
+            let hago = false;
+           
+            
+
+            ele.onclick = () =>{
+                div.style.setProperty("display", "flex");
+                div.style.setProperty("position","relative")
+                div.style.setProperty("justify-content", "center");
+                fondo = document.createElement("div")
+                div.appendChild(fondo)
+                fondo.style.setProperty("background-color", "grey");
+                fondo.style.setProperty("opacity","0.6");
+                fondo.style.width = screen.availWidth+"px"
+                fondo.style.setProperty("height", screen.availHeight+"px");
+                //ele.style.removeProperty("width");
+                //ele.style.removeProperty("height");
+                fondo.style.setProperty("position","absolute")
+                ele.style.setProperty("position", "absolute")
+                ele.style.zIndex = 2
+                console.log(hago);
+                ele.onclick = false
+          
+            }
+            
+            
+            document.body.onclick = () =>{
+                if(hago){
+                    
+                    let cum = fondo.parentNode;
+                    cum.removeChild(fondo)
+                }
+                hago = true
+            }
+            
+            
+            
+        }
+    </script>
+</head>
+<body style="height:100rem ;">
+    <div style="height:100rem;"><img src="imagenes/imagen-grande.jpg" style="width: 50%;height: 50%;"></div>
+</body>
+</html>

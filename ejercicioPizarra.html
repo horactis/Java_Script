@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: solid;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section{
+            border: solid;
+            border-color: red;
+            padding: 50px;
+            width: 150px;
+            height: 650px;
+        }
+    </style>
+    <script>
+        window.onload = () =>{
+            let boton = document.getElementsByTagName("button")[0];
+            let ele = document.getElementsByTagName("div");
+            let lista = [];
+            for (let i = 0; i < ele.length; i++) {
+                lista[i] = ele[i];
+                
+            }
+            boton.onclick = () =>{
+                boton.setAttribute("disabled", "true");
+                let papa = ele[0].parentNode;
+                for (let i = 0; i < lista.length; i++) {
+                    papa.removeChild(lista[i]);
+                }
+            }    
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </section>
+    <button>Borrar</button>
+</body>
+</html>

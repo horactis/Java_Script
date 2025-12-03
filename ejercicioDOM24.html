@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:nth-child(2n){
+            background-color: green;
+            color: white;
+        }
+    </style>
+    <script>
+        window.onload = () =>{
+            console.log("hoal");
+            let botone = document.querySelectorAll("button")
+            let ul = document.querySelector("ul")
+            botone[0].onclick = () =>{
+                let lista = document.createElement("li")
+                lista.innerText = prompt("Dime una nueva tarea")
+                let li = document.querySelectorAll("li")
+                ul.insertBefore(lista,li[0])
+            }
+            botone[1].onclick = () =>{
+                let lista = document.createElement("li")
+                lista.innerText = prompt("Dime una nueva tarea")
+                let li = document.querySelectorAll("li")
+                ul.appendChild(lista)
+            }
+            botone[2].onclick = () =>{
+                let li = document.querySelectorAll("li")
+               
+                if(li[0] != undefined){
+                    let padre = li[0].parentNode
+                    padre.removeChild(li[li.length-1])
+                }
+            }
+            botone[3].onclick = () =>{
+                let li = document.querySelectorAll("li")
+                if(li[0] != undefined){
+                    let padre = li[0].parentNode
+                    padre.removeChild(li[0])
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>tarea</li>
+        <li>venirapormo</li>
+        <li>teresa caeras</li>
+        <li>masone</li>
+        <li>masoneria</li>
+        <li>maripila</li>
+        <li>carmonina puta</li>
+    </ul>
+    <button>Añadir Tarea al Inicio:</button>
+    <button>Añadir Tarea al Final:</button>
+    <button>Eliminar Ultima Tarea</button>
+    <button>Eliminar Primera Tarea</button>
+</body>
+</html>

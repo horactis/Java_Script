@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        window.onload = () =>{
+            let ele = document.querySelectorAll("button")
+            let div = document.querySelectorAll("div")
+            let parar = false;
+            let intervalo = null
+            function correr (){
+                for (let i = 0; i < div.length; i++) {
+                    let margen = parseInt(div[i].style.getPropertyValue("margin-left")) + Math.random()*10
+                    if(parseInt(div[i].style.getPropertyValue("margin-left")) < screen.availWidth-800){
+                        div[i].style.setProperty("margin-left", margen+"px")
+                    }      
+                }
+                parar = true
+            }
+            ele[0].onclick = () =>{
+                ele[0].setAttribute("disabled", "true")
+                intervalo = setInterval(correr, 10)
+                if(parar) clearInterval(intervalo);
+            }
+            ele[1].onclick = () =>{
+                for (let i = 0; i < div.length; i++) {
+                    div[i].style.setProperty("margin-left", 0+"px")
+                }
+                clearInterval(intervalo)
+                intervalo = null
+                ele[0].removeAttribute("disabled")
+                parar = false
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color: red; margin-left: 0px;"></div>
+    <br>
+    <div style="background-color: aqua; margin-left: 0px;"></div>
+    <br>
+    <div style="background-color: greenyellow; margin-left: 0px;"></div>
+    <br>
+    <div style="background-color: yellow; margin-left: 0px;"></div>
+    <br>
+    <button>Correrse</button>
+    <button>Reset</button>
+</body>
+</html>

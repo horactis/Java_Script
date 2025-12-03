@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <a href="https://www.google.com">Google</a>
+    <button onclick="mostrarURL()">Mostrar</button>
+    <button onclick="cambiarURL()">Cambiar</button> 
+</body>
+</html>
+<script>
+    function mostrarURL(){
+        let ele = document.getElementsByTagName("a")[0];
+        alert(ele.innerText+", "+ele.href);
+    }
+
+    function cambiarURL(){
+        let ele = document.getElementsByTagName("a")[0];
+        ele.setAttribute("href", "http://es.wikipedia.org");
+        ele.innerText = "he cambiado";
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><pre><meter value="" min="0" max="100" style="width: 200px;"></meter>  <button>Descargar</button></p></pre>
+    <br>
+    <progress></progress>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByTagName("meter")[0];
+    let b = document.getElementsByTagName("button");
+    
+    function descarga(){
+        console.log(ele.value);
+        if (ele.value < 100) {
+            ele.value += 1;
+        }else{
+            clearInterval(ninterval);
+            b[0].removeAttribute("disabled");
+        }
+        
+    }
+    b[0].onclick = () => {
+        ele.value = 0;
+        ninterval = setInterval(descarga, 50);
+        b[0].setAttribute("disabled", "true");
+    }
+
+</script>

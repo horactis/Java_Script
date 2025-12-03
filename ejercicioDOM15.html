@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subap{
+            display: none;
+        }
+        ul.navega li{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navega">
+        <li class="lista"><b>Inicio</b></li>
+        <ul class="subap">
+            <li>Portada.</li>
+            <li>Acerca de mi.</li>
+            <li>Mis fotos.</li>
+        </ul>
+        <li class="lista"><b>Proyectos</b></li>
+        <ul class="subap">
+            <li>Web Apps.</li>
+            <li>Mobile Apps.</li>
+            <li>Juegos.</li>
+        </ul>
+        <li class="lista"><b>Portfolio</b></li>
+        <ul class="subap">
+            <li>Páginas Webs</li>
+            <li>Software</li>
+        </ul>
+        <li class="lista"><b>Contacto</b></li>
+    </ul>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByClassName("subap");
+    let lista = document.getElementsByClassName("lista");
+    for (let i = 0; i < lista.length; i++) {
+        lista[i].onclick = () => {
+            ele[i].style.display = "block";
+            if(i == 0){
+                ele[i+1].style.display = "none";
+                ele[i+2].style.display = "none";
+            }else if(i == 1){
+                ele[i+1].style.display = "none";
+                ele[i-1].style.display = "none";
+            }else if(i == 2){
+                ele[i-1].style.display = "none";
+                ele[i-2].style.display = "none";
+            } 
+        }
+    }
+    
+</script>

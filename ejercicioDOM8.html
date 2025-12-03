@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 800px;
+            height: 600px;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            margin-top: 6%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <img src="imagenes/f1.jpg"/>
+    </div>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByTagName("img")[0];
+    ele.onmouseover = () => {ele.setAttribute("src", "imagenes/f2.jpg");}
+    ele.onmouseout = () => {ele.setAttribute("src", "imagenes/f1.jpg");}
+</script>

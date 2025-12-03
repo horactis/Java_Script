@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button value="blue" onclick="cambiar()">Azul</button>
+    <button value="green">Verde</button>
+    <button value="red">Rojo</button>
+    <button value="yellow">Amarillo</button>
+    <button value="pink">rosa</button>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByTagName("button");
+    for (let i = 0; i < ele.length; i++) {
+        ele[i].onclick = () => {
+            document.body.style.setProperty("background-color", ele[i].value)
+        }   
+    }
+
+
+
+</script>
+
+
+

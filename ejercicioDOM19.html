@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let ele = document.getElementsByTagName("li");
+            let texto= "";
+            let textoN = "";
+            let boton = document.getElementsByTagName("button")[0];
+            let i = 0;
+            boton.onclick = () =>{
+                texto = prompt("Introduce lo que quieras")
+                textoN = document.createTextNode(texto);
+                ele[i].appendChild(textoN)
+                i++;
+            }     
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <button>Añadir</button>
+</body>
+</html>

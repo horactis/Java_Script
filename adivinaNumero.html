@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let inicio = document.getElementsByTagName("img")[0];
+            let botones = document.querySelectorAll("input[type='button']");
+            let apuesta = document.querySelector("#apuesta");
+            let info = document.querySelector("#info")
+            let genrEr = true;
+            let intentos = document.querySelector("#intentos");
+            let random = 0;
+            inicio.onclick = () =>{
+                //inicio.style.display="none";
+                inicio.onclick=false;
+                for (let i = 0; i < botones.length; i++) {
+                    botones[i].removeAttribute("disabled")     
+                }
+                random = parseInt(Math.random()*(100 - 1)+1);
+            }
+            botones[0].onclick = () =>{                       
+                if(apuesta.value >= 1 && apuesta.value <= 100){
+                    if(genrEr = false){
+                        let p = document.querySelector("p")
+                        document.body.removeChild(p);
+                    }
+                    if(apuesta.value == random){
+                        info.value = "HAS GANADO!!!";
+                        botones[0].setAttribute("disabled", "true");
+                        botones[1].setAttribute("disabled", "true");
+                        inicio.onclick = () =>{
+                            inicio.onclick=false;
+                            for (let i = 0; i < botones.length; i++) {
+                                botones[i].removeAttribute("disabled")     
+                            }
+                            random = parseInt(Math.random()*(100 - 1)+1);
+                        }
+                        
+                    }else{
+                        info.value = "Vuelve a intentarlo";
+                        intentos.value = parseInt(intentos.value)+1;
+                    }
+                }
+                else{
+                    if (genrEr){
+                        info.value = "error, introduzca bien la apuesta";
+                        genrEr = false;
+                    }
+                    intentos.value = parseInt(intentos.value)+1;
+                }
+                genrEr = true
+            }
+            botones[1].onclick = () =>{
+                botones[0].setAttribute("disabled", "true");
+                botones[1].setAttribute("disabled", "true");
+                inicio.onclick = () =>{
+                    inicio.onclick=false;
+                    for (let i = 0; i < botones.length; i++) {
+                        botones[i].removeAttribute("disabled")     
+                    }
+                    random = parseInt(Math.random()*(100 - 1)+1);
+                }
+                info.value = "El numero era "+random;
+            }
+        }
+    </script>
+    <style>
+        form div{
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        img{
+            width: 100px;
+            height: 25px;
+        }
+        button{
+            width: 100px;
+        }
+        body{
+            display: flex;
+            justify-content: space-around;
+           
+        }
+        .adivina{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="get">
+        Tu Apuesta: <input type="number" id="apuesta" style="width: 60px;">
+        <input type="button" disabled="true" value="Apuesta">
+        <input type="button" disabled="true" value="Me rindo">
+        <br>
+        <br>
+        #-Intentos: <input type="text" id="intentos" style="width: 40px;" value="0">
+        <br>
+        <br>
+        INFO: <input type="text" id="info" style="width: 300px;">
+        <br>
+        <div><img src="/imagenes/juegos/01 Adivina/inicio.jpg" alt="Enviar formulario"></div>
+    </form>
+    <div><img src="/imagenes/juegos/01 Adivina/adivina.jpg" class="adivina"></div>
+</body>
+</html>

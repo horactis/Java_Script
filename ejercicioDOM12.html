@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+        }
+        img{
+            width: 800px;
+            height: 600px;
+        }
+        button{
+            margin-top: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div><img src="imagenes/f1.jpg"></div>
+    <button onmouseover="izquierda()">Izquierda</button>
+    <button onmouseover="derecha()">Derecha</button>
+</body>
+</html>
+<script>
+    let ele = document.getElementsByTagName("div")[0];
+    ele.style.marginLeft = "0px";
+
+    function derecha(){
+        let margen = parseInt(ele.style.getPropertyValue("margin-left"));
+        if (margen < 700) {
+            ele.style.marginLeft = (margen+5)+"px";
+            console.log(margen);
+        }
+    }
+    function izquierda(){
+        let margen = parseInt(ele.style.getPropertyValue("margin-left"));
+        if (margen > 0) {
+          ele.style.marginLeft = (margen-5)+"px";  
+        }      
+    }
+
+</script>
