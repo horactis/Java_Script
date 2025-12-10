@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let boton = document.querySelector("input[type='button']");
+            let aficiones = document.querySelectorAll("input[type='checkbox']")
+            let textarea = document.querySelector("textarea")
+            /*boton.onclick = () =>{
+                mirar();
+            }
+            */
+            for(ele of aficiones) {
+                ele.addEventListener("click",mirar); // esto es como hacer un oneclick
+            }
+            
+            function mirar() {
+                textarea.value = ""
+                for (let i = 0; i < aficiones.length; i++) {
+                    if(aficiones[i].checked){
+                        textarea.value += aficiones[i].value+" "
+                    }   
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="checkbox" name="aficiones" value="Juegos">Juegos
+        <br>
+        <input type="checkbox" name="aficiones2" value="Anime"> Anime
+        <br>
+        <input type="checkbox" name="aficiones3" value="Series"> Series
+        <br>
+        <input type="checkbox" name="aficiones4" value="Pelis"> Pelis
+        <br>
+        <textarea></textarea>
+        <br>
+        <input type="button" value="Enviar">
+    </form>
+</body>
+</html>

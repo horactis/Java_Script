@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let boton = document.querySelector("input[type='button']")
+            let dinero = document.querySelectorAll("input[type='text']")
+            let cambio = document.querySelector("select")
+            boton.onclick = () =>{           
+                if(cambio.value == "d"){
+                   dinero[1].value = parseFloat(dinero[0].value)*0.83 
+                }else if (cambio.value == "e"){
+                    dinero[1].value = parseFloat(dinero[0].value)/0.83
+                }else{
+                    alert("Eligue una opcion malito")
+                }  
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Tu dinero</label>
+    <input type="text">
+    <label>Dinero cambiado</label>
+    <input type="text" disabled>
+    <select name="cambio">
+        <option disabled selected>--Eligue un cambio--</option>
+        <option value="d">Cambiar a Dolares</option>
+        <option value="e">Cambiar a Euros</option>
+    </select>
+    <input type="button" value="Cambio">
+</body>
+</html>

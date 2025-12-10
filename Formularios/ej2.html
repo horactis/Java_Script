@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let texto = document.querySelectorAll("input");
+            texto[0].onkeyup = () =>{
+                texto[1].value = texto[0].value
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <br>
+        <input type="text" disabled>
+        <br>
+    </form>
+</body>
+</html>
