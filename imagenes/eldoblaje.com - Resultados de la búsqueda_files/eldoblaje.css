@@ -1,0 +1,137 @@
+.trebuchett {  font-family: Arial; font-size: 11px; text-decoration: none}
+.arialblanca {  font-family: Arial; color: #FFFFFF; font-size: 10px; text-decoration: none}
+.arialnegra {  font-family: Arial; color: #000000; font-size: 10px; text-decoration: none}
+.arial {  font-family: Arial; font-size: 10px; text-decoration: none}
+
+.arial14white {  font-family: Arial; font-size: 14px; color: #FFFFFF; text-decoration: none}
+.arial16white {  font-family: Arial; font-size: 16px; color: #FFFFFF; text-decoration: none}
+.arial18white {  font-family: Arial; font-size: 18px; color: #FFFFFF; text-decoration: none}
+.arial24white {  font-family: Arial; font-size: 24px; color: #FFFFFF; text-decoration: none}
+
+.arial14gris {  font-family: Arial; font-size: 14px; color: #666666; text-decoration: none}
+.arial16gris {  font-family: Arial; font-size: 16px; color: #666666; text-decoration: none}
+.arial18gris {  font-family: Arial; font-size: 18px; color: #666666; text-decoration: none}
+.arial24gris {  font-family: Arial; font-size: 24px; color: #666666; text-decoration: none}
+
+.arial18 {  font-family: Arial; font-size: 18px; color: #000000; text-decoration: none}
+.arial18rojo {  font-family: Arial; font-size: 18px; color: #FF0000; text-decoration: none}
+.arial18negro {  font-family: Arial; font-size: 18px; color: #000000; text-decoration: none}
+.arial18blanco {  font-family: Arial; font-size: 18px; color: #ffffff; text-decoration: none}
+
+.arial16 {  font-family: Arial; font-size: 16px; color: #000000; text-decoration: none}
+.arial16rojo {  font-family: Arial; font-size: 16px; color: #FF0000; text-decoration: none}
+
+.arial14 {  font-family: Arial; font-size: 14px; color: #000000; text-decoration: none}
+.arial14rojo {  font-family: Arial; font-size: 14px; color: #FF0000; text-decoration: none}
+
+.arial12 {  font-family: Arial; font-size: 12px; color: #000000; text-decoration: none}
+.arial12rojo {  font-family: Arial; font-size: 12px; color: #FF0000; text-decoration: none}
+
+.arial11 {  font-family: Arial; font-size: 11px; color: #000000; text-decoration: none; font-weight: bold}
+
+.arial24 {
+
+	font-family: Arial;
+	font-size: 24px;
+	text-decoration: none
+}
+.arial36 {  font-family: Arial; font-size: 36px; text-decoration: none}
+.courier24 {  font-family: Courier New, Courier, mono; font-size: 24px; text-decoration: none}
+.courier36 {  font-family: Courier New, Courier, mono; font-size: 36px; text-decoration: none}
+.headerletra {  font-family: Arial; color: #ffffff; font-size: 11px; text-decoration: none}
+
+.cabin11 {  font-family: 'Cabin', sans-serif; color: #333333; font-size: 11px; text-decoration: none}
+.cabin18 {  font-family: 'Cabin', sans-serif; color: #333333; font-size: 18px; text-decoration: none}
+.cabin24 {  font-family: 'Cabin', sans-serif; color: #333333; font-size: 24px; text-decoration: none}
+
+.trebuchettwhite {  font-family: Arial; color: #FFFFFF; font-size: 11px; text-decoration: none}
+.trebuchettbold {  font-family: Arial; font-size: 11px; text-decoration: none; font-weight: bold}
+.buscar {  font-family: Arial; font-size: 8pt; color: #000000; font-weight: normal}
+.buscar2 {  font-family: Arial; font-size: 11pt; color: #FF0000; font-weight: bold}
+.buscar3 {  font-family: Arial; font-size: 10pt; color: #FF0000; font-weight: bold}
+
+a.headerclass:link {  font-family: Arial; color: #ffffff; font-size: 11px; text-decoration: none}
+a.headerclass:active {  font-family: Arial; color: #ffffff; font-size: 11px; text-decoration: none}
+a.headerclass:visited {  font-family: Arial; color: #ffffff; font-size: 11px; text-decoration: none}
+a.headerclass:hover {  font-family: Arial; color: #ff0000; font-size: 11px; text-decoration: none}
+
+a.headerclassarial:link {  font-family: Arial; color: #ffffff; font-size: 10px; text-decoration: none}
+a.headerclassarial:active {  font-family: Arial; color: #ffffff; font-size: 10px; text-decoration: none}
+a.headerclassarial:visited {  font-family: Arial; color: #ffffff; font-size: 10px; text-decoration: none}
+a.headerclassarial:hover {  font-family: Arial; color: #ffffff; font-size: 10px; text-decoration: underline}
+
+a.bodyclass:link {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+a.bodyclass:active {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+a.bodyclass:visited {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+a.bodyclass:hover {  font-family: Arial; color: #ff0000; font-size: 11px; font-weight: bold; text-decoration: none}
+
+a.bodyclass25:link {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+a.bodyclass25:active {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+a.bodyclass25:visited {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+a.bodyclass25:hover {  font-family: Arial; color: #000000; font-size: 11px; font-weight: bold; text-decoration: none}
+
+a.bodyclasslight:link {  font-family: Arial; color: #000000; font-size: 11px; text-decoration: none}
+a.bodyclasslight:active {  font-family: Arial; color: #000000; font-size: 11px; text-decoration: none}
+a.bodyclasslight:visited {  font-family: Arial; color: #000000; font-size: 11px; text-decoration: none}
+a.bodyclasslight:hover {  font-family: Arial; color: #ff0000; font-size: 11px; ; text-decoration: none}
+
+a.destacado1:link {  font-family: Arial; color: #006666; font-size: 11px; font-weight: bold; text-decoration: none}
+a.destacado1:active {  font-family: Arial; color: #006666; font-size: 11px; font-weight: bold; text-decoration: none}
+a.destacado1:visited {  font-family: Arial; color: #006666; font-size: 11px; font-weight: bold; text-decoration: none}
+a.destacado1:hover {  font-family: Arial; color: #ff0000; font-size: 11px; font-weight: bold; text-decoration: none}
+
+a.bodyclassg:link {  font-family: Arial; color: #333333; font-size: 24px; text-decoration: none}
+a.bodyclassg:active {  font-family: Arial; color: #333333; font-size: 24px; text-decoration: none}
+a.bodyclassg:visited {  font-family: Arial; color: #333333; font-size: 24px; text-decoration: none}
+a.bodyclassg:hover {  font-family: Arial; color: #ff0000; font-size: 24px; text-decoration: none}
+
+a.bodyclass12:link {  font-family: Arial; color: #333333; font-size: 12px; text-decoration: none}
+a.bodyclass12:active {  font-family: Arial; color: #333333; font-size: 12px; text-decoration: none}
+a.bodyclass12:visited {  font-family: Arial; color: #333333; font-size: 12px; text-decoration: none}
+a.bodyclass12:hover {  font-family: Arial; color: #ff0000; font-size: 12px; text-decoration: none}
+
+a.bodyclassm:link {  font-family: Arial; color: #333333; font-size: 18px; text-decoration: none}
+a.bodyclassm:active {  font-family: Arial; color: #333333; font-size: 18px; text-decoration: none}
+a.bodyclassm:visited {  font-family: Arial; color: #333333; font-size: 18px; text-decoration: none}
+a.bodyclassm:hover {
+	font-family: Arial;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-decoration: none
+}
+
+
+a.bodyclassmfondorojo:link {  font-family: Arial; color: #ffffff; font-size: 14px; text-decoration: none}
+a.bodyclassmfondorojo:active {  font-family: Arial; color: #ffffff; font-size: 14px; text-decoration: none}
+a.bodyclassmfondorojo:visited {  font-family: Arial; color: #ffffff; font-size: 14px; text-decoration: none}
+a.bodyclassmfondorojo:hover {bodyclassmfondorojo
+	font-family: Arial;
+	color: #000000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+a.bodyclassmfondonegro:link {  font-family: Arial; color: #ffffff; font-size: 14px; text-decoration: none}
+a.bodyclassmfondonegro:active {  font-family: Arial; color: #ffffff; font-size: 14px; text-decoration: none}
+a.bodyclassmfondonegro:visited {  font-family: Arial; color: #ffffff; font-size: 14px; text-decoration: none}
+a.bodyclassmfondonegro:hover {  font-family: Arial; color: #ff0000; font-size: 14px; text-decoration: none}
+
+a.bodyclassmfondogris:link {  font-family: Arial; color: #333333; font-size: 14px; text-decoration: none}
+a.bodyclassmfondogris:active {  font-family: Arial; color: #333333; font-size: 14px; text-decoration: none}
+a.bodyclassmfondogris:visited {  font-family: Arial; color: #333333; font-size: 14px; text-decoration: none}
+a.bodyclassmfondogris:hover {  font-family: Arial; color: #ff0000; font-size: 14px; text-decoration: none}
+
+a.footerclass:link {  font-family: Arial; color: #cccccc; font-size: 11px; text-decoration: none}
+a.footerclass:active {  font-family: Arial; color: #cccccc; font-size: 11px; text-decoration: none}
+a.footerclass:visited {  font-family: Arial; color: #cccccc; font-size: 11px; text-decoration: none}
+a.footerclass:hover {  font-family: Arial; color: #ff0000; font-size: 11px; text-decoration: none}
+
+a.bodyclass18:link {  font-family: Arial; color: #333333; font-size: 18px; text-decoration: none}
+a.bodyclass18:active {  font-family: Arial; color: #333333; font-size: 18px; text-decoration: none}
+a.bodyclass18:visited {  font-family: Arial; color: #333333; font-size: 18px; text-decoration: none}
+a.bodyclass18:hover {
+	font-family: Arial;
+	color: #FF0000;
+	font-size: 18px;
+	text-decoration: none
+}

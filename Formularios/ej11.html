@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let botone = document.querySelector("button[type='submit']")
+            let botonr = document.querySelector("button[type='reset']")
+            botone.addEventListener("click", function(e){
+                e.preventDefault()
+                validar()
+            })
+
+            botonr.addEventListener("click",function(e){
+                e.preventDefault()
+                let respuesta = confirm("Estas segur@ de que quieres borrar?")
+                if(respuesta){
+                    apagarCSS()
+                    formu.reset()
+                }
+            })
+        
+
+
+            function validar(){
+                let formu = document.querySelector("form")
+                    let dni = document.getElementsByName("dni")[0]
+                    let nombre = formu.nombre
+                    let apel = document.querySelector("input[name='apellidos']")
+                    let clave = document.querySelector("input[type='password']")
+                    let web = formu.elements[4]
+                    let fecha = document.querySelector("input[name='fecha']")
+
+                //controla si hay fallos o no
+                let fallos = false
+
+                apagarCSS()
+                //campos no pueden estar vacios
+                dni.value = dni.value.trim()
+                if(dni.value=="" || dni.value.length == 0){
+                    alert("El dni no puede quedar vacio")
+                    fallos = true
+                    dni.style.border = "2px solid red"
+                    dni.focus()
+                    //return false
+                }
+                dni.value = dni.value.trim()
+                if(dni.value.length != 9){
+                    alert("El dni no puede quedar vacio")
+                    fallos = true
+                    dni.style.border = "2px solid red"
+                    dni.focus()
+                    //return false
+                }
+                nombre.value = nombre.value.trim()
+                if(nombre.value=="" || nombre.value.length == 0){
+                    alert("El nombre no puede quedar vacio")
+                    fallos = true
+                    nombre.style.border = "2px solid red"
+                    nombre.focus()
+                    //return false
+                }
+
+                apel.value = apel.value.trim()
+                if(apel.value=="" || apel.value.length == 0){
+                    alert("El apellido no puede quedar vacio")
+                    fallos = true
+                    apel.style.border = "2px solid red"
+                    apel.focus()
+                    //return false
+                }
+
+                clave.value = clave.value.trim()
+                if(clave.value=="" || clave.value.length == 0){
+                    alert("La contraseña no puede quedar vacio")
+                    fallos = true
+                    clave.style.border = "2px solid red"
+                    clave.focus()
+                    //return false
+                }
+
+                web.value = web.value.trim()
+                if(web.value=="" || web.value.length == 0){
+                    alert("El web no puede quedar vacio")
+                    fallos = true
+                    web.style.border = "2px solid red"
+                    web.focus()
+                    //return false
+                }
+
+                //Fecha
+                let trozis = fecha.value.split("/")
+                for (let i = 0; i < fecha.value.length; i++) {
+                    if(i==2 || i == 5){
+                        if(fecha.value[i] != "/"){
+                            //Fallo formato incorrecto
+                        }
+                    }else{
+                        if(isNan(fecha.value[i])){
+                            //Fallo has metido cadenas en vez de numeros
+                        }
+                    }
+                }
+
+                //Si todo esta OK, envio
+                if(!fallos){
+                    formu.submit()
+                }
+
+                function apagarCSS(){
+                    let formu = document.querySelector("form")
+                    let dni = document.getElementsByName("dni")[0]
+                    let nombre = formu.nombre
+                    let apel = document.querySelector("input[name='apellidos']")
+                    let clave = document.querySelector("input[type='password']")
+                    let web = formu.elements[4]
+                    let fecha = document.querySelector("input[name='fecha']")
+
+                    dni.style.border = "2px solid #bcd4f6"
+                    nombre.style.border = "2px solid #bcd4f6"
+                    apel.style.border = "2px solid #bcd4f6"
+                    clave.style.border = "2px solid #bcd4f6"
+                    web.style.border = "2px solid #bcd4f6"
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="formulario">
+        DNI<br>
+        <input type="text" name="dni" placeholder="00000000A"><br><br>
+        Nombre<br>
+        <input type="text" name="nombre" placeholder="Tu nombre"><br><br>
+        Apellidos<br>
+        <input type="text" name="apellidos" placeholder="Tus apellidos"><br><br>
+        Fecha de nacimiento<br>
+        <input type="text" name="fecha" placeholder="dd/mm/yyyy"><br><br>
+        Web personal<br>
+        <input type="text" name="web" placeholder="https://www.ejemplo.com"><br><br>
+        contraseña<br>
+        <input type="password" name="password" placeholder="Entre 8 y 12 caracteres"><br><br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Resetear</button>
+    </form>
+</body>
+</html>

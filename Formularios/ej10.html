@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            width: 130px;
+        }
+    </style>
+    <script>
+        window.onload = () =>{
+            let marca = document.querySelector("select[name='marca']")
+            let boton = document.querySelector("button")
+            let lista = document.querySelector("select[name='lista']")
+            console.log(marca.value);
+            
+            if(marca.options[].value == "i"){
+                let opciones = document.createElement("option")
+                opciones.value = "1"
+                opciones.innerText = "HD 3000"
+                lista.appendChild(opciones)
+                opciones.value = "2"
+                opciones.innerText = "HD 4000"
+                lista.appendChild(opciones)
+                opciones.value = "3"
+                opciones.innerText = "HD 6000"
+                lista.appendChild(opciones)
+            }else if (marca.value == "a"){
+
+            }
+            
+            
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <select name="marca">
+            <option disabled selected>--Elige una opcion</option>
+            <option value="i">Intel</option>
+            <option value="a">AMD</option>
+            <option value="n">Nvidia</option>
+        </select>
+   
+        <select name="lista"></select>
+        <input type="button" value="ENviar">
+    </form>
+</body>
+</html>
