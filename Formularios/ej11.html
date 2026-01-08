@@ -101,6 +101,14 @@
                 }else{
                     alert("No es tan larga/corta")
                 }
+                //web
+                let web = formu["web"].value
+                let arrayWeb = web.split("//")
+        
+                if(arrayWeb[0] != "https:"){
+                    alert("error")
+                }
+
 
                 //Si todo esta OK, envio
                 if(!fallos){
