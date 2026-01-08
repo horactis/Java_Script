@@ -12,24 +12,92 @@
     <script>
         window.onload = () =>{
             let marca = document.querySelector("select[name='marca']")
-            let boton = document.querySelector("button")
-            let lista = document.querySelector("select[name='lista']")
-            console.log(marca.value);
+            let boton = document.querySelector('input[type="button"]')
+            let formu = document.querySelector("form")
             
-            if(marca.options[].value == "i"){
-                let opciones = document.createElement("option")
-                opciones.value = "1"
-                opciones.innerText = "HD 3000"
-                lista.appendChild(opciones)
-                opciones.value = "2"
-                opciones.innerText = "HD 4000"
-                lista.appendChild(opciones)
-                opciones.value = "3"
-                opciones.innerText = "HD 6000"
-                lista.appendChild(opciones)
-            }else if (marca.value == "a"){
-
-            }
+            marca.addEventListener("change",() => {
+                if(marca.options[marca.selectedIndex].value == "i"){
+                    if(document.getElementsByTagName("select")[1]){
+                        formu.removeChild(document.getElementsByTagName("select")[1])
+                    }
+                    let lista = document.createElement("select")
+                    formu.insertBefore(lista, document.querySelector('input'));
+                    let opciones = document.createElement("option")
+                    opciones.innerText = "--Elige una opcion--"
+                    opciones.disabled = true
+                    opciones.selected = true
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "1"
+                    opciones.innerText = "HD 3000"
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "2"
+                    opciones.innerText = "HD 4000"
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "3"
+                    opciones.innerText = "HD 6000"
+                    lista.appendChild(opciones)
+                }else if (marca.options[marca.selectedIndex].value == "a"){
+                    if(document.getElementsByTagName("select")[1]){
+                        formu.removeChild(document.getElementsByTagName("select")[1])
+                    }
+                    let lista = document.createElement("select")
+                    formu.insertBefore(lista, document.querySelector('input'));
+                    let opciones = document.createElement("option")
+                    opciones.innerText = "--Elige una opcion--"
+                    opciones.disabled = true
+                    opciones.selected = true
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "1"
+                    opciones.innerText = "RX Series 500"
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "2"
+                    opciones.innerText = "Vega Series"
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "3"
+                    opciones.innerText = "RX Series 6000"
+                    lista.appendChild(opciones)
+                }else{
+                    if(document.getElementsByTagName("select")[1]){
+                        formu.removeChild(document.getElementsByTagName("select")[1])
+                    }
+                    let lista = document.createElement("select")
+                    formu.insertBefore(lista, document.querySelector('input'));
+                    let opciones = document.createElement("option")
+                    opciones.innerText = "--Elige una opcion--"
+                    opciones.disabled = true
+                    opciones.selected = true
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "1"
+                    opciones.innerText = "GTX Serie 1000"
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "2"
+                    opciones.innerText = "GTX Serie 2000"
+                    lista.appendChild(opciones)
+                    opciones = document.createElement("option")
+                    opciones.value = "3"
+                    opciones.innerText = "GTX Serie 3000"
+                    lista.appendChild(opciones)
+                }
+            });
+            boton.addEventListener("click", () =>{
+                let selec = document.querySelectorAll("select")
+                if(selec[0].selectedIndex && selec[1].selectedIndex){
+                    alert("ambas listas estan seleccionadas")
+                }else{
+                    alert("alguna de las listas no esta seleccionada")
+                }
+            });
+            
+    
+            
             
             
             
@@ -40,14 +108,14 @@
 <body>
     <form action="">
         <select name="marca">
-            <option disabled selected>--Elige una opcion</option>
+            <option disabled selected>--Elige una opcion--</option>
             <option value="i">Intel</option>
             <option value="a">AMD</option>
             <option value="n">Nvidia</option>
         </select>
    
-        <select name="lista"></select>
-        <input type="button" value="ENviar">
+        
+        <input type="button" value="Enviar">
     </form>
 </body>
 </html>
