@@ -91,17 +91,15 @@
                 }
 
                 //Fecha
-                let trozis = fecha.value.split("/")
-                for (let i = 0; i < fecha.value.length; i++) {
-                    if(i==2 || i == 5){
-                        if(fecha.value[i] != "/"){
-                            //Fallo formato incorrecto
-                        }
-                    }else{
-                        if(isNan(fecha.value[i])){
-                            //Fallo has metido cadenas en vez de numeros
-                        }
-                    }
+                let fecha = formu["fecha"].value; 
+                let anal = fecha.split("/")
+                // anal[0] => dias anal[1] => mes anal[2] => anno
+                if(anal[0].length == 2 && anal[1].length == 2 && anal[2].length == 4){
+                    if(isNaN(anal[0])  isNaN(anal[1])  isNaN(anal[2])){
+                        alert("la fecha tiene letras cojones")
+                    }else alert("la fechica esta bien")
+                }else{
+                    alert("No es tan larga/corta")
                 }
 
                 //Si todo esta OK, envio
