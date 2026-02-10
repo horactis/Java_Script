@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball - Personajes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = () => {
+            fetch('https://dragonball-api.com/api/characters') // 1. Hacer la llamada
+            .then(response => response.json()) // 2. Esperar la respuesta y convertirla
+            .then(data => { // 3. Usar los datos
+                for (const key in data['items']) {
+                    let article = document.createElement("article")
+                    document.querySelector("#personajes").appendChild(article)
+                    let nombre = document.createElement("h3")
+                    let imagen = document.createElement("img")
+                    let raza = document.createElement("p")
+                    let maxKi = document.createElement("p")        
+                    nombre.textContent = data["items"][key]["name"] 
+                    imagen.src = data["items"][key]["image"]
+                    raza.innerHTML= "<b>Raza: </b>"+data["items"][key]["race"]
+                    article.setAttribute("id", data["items"][key]["id"])
+                    article.appendChild(nombre)
+                    article.appendChild(imagen)
+                    article.appendChild(raza)
+                    maxKi.innerHTML= "<b>Maximo Ki: </b>"+data["items"][key]["maxKi"]
+                    article.appendChild(maxKi)
+                }
+                
+                let article = document.querySelectorAll("article")
+                for (let i = 0; i < article.length; i++) {
+                    article[i].addEventListener("click", ()=>{
+                        localStorage.setItem("id", article[i].getAttribute("id"))
+                        console.log(localStorage);
+                        location.href = "personaje.html"
+                    })
+                }
+            })
+            .catch(error => { // 4. Gestionar errores (Opcional pero recomendado)
+                console.error("Algo salió mal:", error);
+            }); 
+        }
+    </script>
+</head>
+<body>
+    <h1>Personajes de Dragon Ball</h1>
+    <section id="personajes"></section>
+    
+</body>
+</html>

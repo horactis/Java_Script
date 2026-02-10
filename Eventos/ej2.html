@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>X: Y:</div><br>
+    <div></div>
+    <script>
+        window.onload = () =>{
+            const d = document.querySelectorAll('div');
+            document.body.addEventListener('mousemove', (e) => {
+                d[0].textContent = "X: "+e.clientX + ",Y: "+ e.clientY;
+            });
+            document.addEventListener("mousedown", (e) =>{
+                switch (true) {
+                    case e.button == 0:
+                        d[1].textContent = "Click izquierdo"
+                        break;
+                    case e.button == 1:
+                        d[1].textContent = "Rueda central"
+                        break;
+                    default:
+                        d[1].textContent = "Click derecho"
+                        break;
+                }
+            });
+            document.addEventListener("contextmenu",(e) =>{
+                e.preventDefault()
+            });
+        }
+    </script>
+    
+</body>
+</html>

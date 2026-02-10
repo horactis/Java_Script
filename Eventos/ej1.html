@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script>
+        window.onload = () =>{
+            let section = document.querySelector("section")
+            let parrafo = document.querySelector("p")
+            let enlace = document.querySelector("a")
+            section.addEventListener("click",(e) =>{
+                section.classList = 'container bg-success text-white p-5';
+                e.stopPropagation()
+            },true);
+            parrafo.addEventListener("click",(e) =>{
+                parrafo.style.width = "10px"
+                
+            },true);
+            enlace.addEventListener("click", (e) =>{
+                let respuesta = confirm("quieres cambiar de pagina?")
+                if(!respuesta){
+                    e.preventDefault()
+                    //e.stopPropagation()
+                }
+            },true);
+        }
+    </script>
+</head>
+<body>
+     <section class="container bg-danger p-5 text-white">Soy un Section
+        <p class="container bg-primary p-4"> Soy un Parrafo
+            <a class="container bg-secondary text-white p-3" href="https://medac.instructure.com/">Enlace</a>
+        </p>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

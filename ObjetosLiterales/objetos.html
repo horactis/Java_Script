@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            let alumno = {
+                nombre: "Gabi",
+                edad: 23,
+                dni: "74973214H",
+                notas: [2,5,7,9,3],
+                movil:{
+                    modelo: "iphone",
+                    moderlo: 14,
+                    medidas: [14.8,0.3,5.4]
+                },
+            }
+            //para ver dentro del array
+            console.log(alumno.nombre);
+            console.log(alumno.notas);
+            console.log(alumno.movil); //[object object]
+            
+            let salida = JSON.stringify(alumno)
+            console.log(salida);
+            
+            //esto no se hace en el mismo fichero
+            let recuperada = JSON.parse(salida)
+            console.log(recuperada);
+
+            //IN
+            if("nombre" in alumno){} //entra en el if si nombre esta en alumno
+
+            //Claves te muestra las claves
+            let claves = Object.keys(alumno);
+            console.log(claves);
+            
+            let otras = Object.keys(alumno.movil);
+            console.log(otras);
+            
+            //Valores te muestra los valores
+            let valores = Object.values(alumno.movil)
+            console.log(valores);
+
+            //pares: clave-valor te muestra todo el array
+            let pares = Object.entries(alumno)
+            console.log(pares);
+            
+            //for in recorre automaticamente un objeto
+            for (const clave in alumno) {
+                if(clave != "movil"){
+                    console.log(clave+": "+alumno[clave]);
+                }else{
+                    for (const key in alumno.movil) {
+                        console.log(key+": "+alumno.movil[key]);
+                        
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>objetos de don perro sanse</h1>
+</body>
+</html>

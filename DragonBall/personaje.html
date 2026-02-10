@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Personaje</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = () => {
+            fetch('https://dragonball-api.com/api/characters/'+localStorage["id"]) // 1. Hacer la llamada
+            .then(response => response.json()) // 2. Esperar la respuesta y convertirla
+            .then(data => { // 3. Usar los datos
+                console.log(data);
+                let nombre = document.createElement("h1")
+                nombre.textContent = data["name"]
+                let det = document.querySelector("#detalles")
+                det.appendChild(nombre)
+
+                let div = document.createElement("div")
+                div.setAttribute("class", "info-principal")
+                let desc = document.createElement("p")
+                desc.textContent = data["description"]
+                div.appendChild(desc)
+                let foto = document.createElement("img")
+                foto.src = data["image"]
+                div.appendChild(foto)
+                det.appendChild(div)
+                
+                let cabezera = document.createElement("h2")
+                cabezera.innerHTML = "<b>Planeta de Origen</b>"
+                det.appendChild(cabezera)
+
+                let cabezera2 = document.createElement("h2")
+                cabezera2.innerHTML = "<b>"+data["originPlanet"]["name"]+"</b>"
+                det.appendChild(cabezera2)
+
+                let div1 = document.createElement("div")
+                div1.setAttribute("class", "info-principal")
+                let desc1 = document.createElement("p")
+                desc1.textContent = data["originPlanet"]["description"]
+                div1.appendChild(desc1)
+                let foto1 = document.createElement("img")
+                foto1.src = data["originPlanet"]["image"]
+                div1.appendChild(foto1)
+                det.appendChild(div1)
+
+                let cabezera3 = document.createElement("h2")
+                cabezera3.innerHTML = "<b>Transformaciones</b>"
+                det.appendChild(cabezera3)
+
+                let section = document.createElement("section")
+                det.appendChild(section)
+                for (const element of data["transformations"]){
+                    console.log(element);
+                    
+                    let article = document.createElement("article")
+                    section.appendChild(article)
+                    let texto = document.createElement("p")
+                    texto.innerHTML = "<b>"+element["name"]+"</b>"
+                    article.appendChild(texto)
+                    let imagen = document.createElement("img")
+                    imagen.src = element["image"]
+                    article.appendChild(imagen)
+                    let texto2 = document.createElement("p")
+                    texto2.innerHTML = "<b>Maximo ki: </b>"+element["ki"]
+                    article.appendChild(texto2)
+                }
+                let article = document.querySelectorAll("article")
+                for (let i = 0; i < article.length; i++) {
+                    article[i].addEventListener("click", ()=>{
+                        window.location.href = "https://www.youtube.com/shorts/0s6YSxeBc3A?t=20"
+                    })
+                }
+            })
+            .catch(error => { // 4. Gestionar errores (Opcional pero recomendado)
+                console.error("Algo salió mal:", error);
+            });
+            document.querySelector("button").addEventListener("click", () =>{
+                    location.href = "index.html"
+                }) 
+        }
+    </script>
+</head>
+<body>
+    <div id="detalles"></div>
+    <button>Volver</button>
+
+</body>
+</html>
